@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <h1>Gestor de Tareas</h1>
+            <p>Regístrate, inicia sesión y administra tus tareas personales.</p>
+        </section>
+
+        <section id="auth-section" class="card">
+            <div class="form-grid">
+                <div>
+                    <h2>Registro</h2>
+                    <input type="email" id="registerEmail" placeholder="Correo electrónico">
+                    <input type="password" id="registerPassword" placeholder="Contraseña">
+                    <button id="registerButton" onclick="register()">Registrar</button>
+                </div>
+
+                <div>
+                    <h2>Iniciar Sesión</h2>
+                    <input type="email" id="loginEmail" placeholder="Correo electrónico">
+                    <input type="password" id="loginPassword" placeholder="Contraseña">
+                    <button id="loginButton" onclick="login()">Entrar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard-section" class="card hidden">
+            <div class="dashboard-header">
+                <div>
+                    <h2>Administrador de tareasS</h2>
+                    <p id="welcomeText"></p>
+                </div>
+                <button class="button-outline" onclick="logout()">Cerrar sesión</button>
+            </div>
+
+            <div class="task-form">
+                <input type="text" id="taskTitle" placeholder="Nueva tarea">
+                <button onclick="addTask()">Agregar tarea</button>
+            </div>
+
+            <div id="tasksContainer" class="tasks-container">
+                <p class="empty-state">Cargando tareas...</p>
+            </div>
+        </section>
+
+        <div id="messageBox" class="message hidden"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
